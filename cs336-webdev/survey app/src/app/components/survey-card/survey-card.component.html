@@ -1,0 +1,20 @@
+<mat-card class="mat-elevation-z20">
+    <mat-card-header>
+        <mat-card-title>
+            <p>{{question}}</p>
+        </mat-card-title>
+        <mat-icon>
+            question_answer
+        </mat-icon>
+        <mat-card-subtitle class="sub">
+            <p> Choose your best answer,from {{minvalue}} to {{maxvalue}} {{units}}
+            </p>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <mat-slider class="slider" (change)="sliderChanged($event)" thumbLabel tickInterval="1" min="{{minvalue}}" max="{{maxvalue}}" step="1" value="1"></mat-slider>
+
+    </mat-card-content>
+    <span>current number is {{gridsize}}</span></mat-card>

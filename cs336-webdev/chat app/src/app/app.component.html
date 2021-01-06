@@ -1,0 +1,33 @@
+<body>
+    <div class="chatcard ">
+        <form>
+
+            <div class="cardfield ">
+
+                <input matInput placeholder="Enter your name " type="text " id="user " [ngStyle]="{ 'color':color} " [(ngModel)]="user " name="user " (keyup.Enter)="setlocalstorage() ">
+
+
+                <input [(colorPicker)]="color " [style.background]="color " />
+                <button (click)="setlocalstorage()">set username</button>
+            </div>
+
+            <!-- displays the chats-->
+
+            <div class="chatbox ">
+                <div class="msg " *ngFor="let items of chatlist " [ngStyle]="{ 'color':items.color} ">
+                    {{items.user}}: {{items.message}}
+                    <p class="time ">{{items.timestamp.toDate() | date:"medium"}}</p>
+                </div>
+
+            </div>
+
+
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Enter a message " type="text " id="message " name="message " [(ngModel)]="message " (keyup.Enter)="submit() ">
+
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</body>
